@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Asesoría Contable & Financiera Remota | Gestión Digital para Pymes y Empresas</title>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0B192C',
+                            900: '#070F1E',
+                            950: '#040812',
+                        },
+                        brand: {
+                            teal: '#00F5D4',
+                            cyan: '#00BBF9',
+                            blue: '#1B4965',
+                            accent: '#3A86FF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Mobile & iOS Safari Fixes */
+        html {
+            -webkit-text-size-adjust: 100%;
+            touch-action: manipulation;
+        }
+        body {
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        /* Prevent iOS zoom on input focus */
+        input, select, textarea {
+            font-size: 16px !important;
+        }
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00F5D4 0%, #00BBF9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0B192C 0%, #1B4965 100%);
+        }
+        .card-blur {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #00F5D4;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 245, 212, 0.6);
+        }
+        .custom-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #00F5D4;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 245, 212, 0.6);
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-brand-teal selection:text-navy-950">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-navy-950/80 border-b border-slate-800/80" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-teal to-brand-cyan flex items-center justify-center text-navy-950 font-heading font-extrabold text-xl shadow-lg shadow-brand-teal/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-chart-pie text-navy-950"></i>
+                </div>
+                <div>
+                    <span class="font-heading font-bold text-xl tracking-tight text-white block leading-none">Finanza<span class="text-brand-teal">Digital</span></span>
+                    <span class="text-[10px] text-slate-400 font-medium tracking-widest uppercase">Contabilidad & Consultoría</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-300">
+                <a href="#servicios" class="hover:text-brand-teal transition-colors">Servicios</a>
+                <a href="#metodologia" class="hover:text-brand-teal transition-colors">Cómo Trabajamos</a>
+                <a href="#cotizador" class="hover:text-brand-teal transition-colors flex items-center gap-1.5">
+                    <span>Cotizador Online</span>
+                    <span class="px-2 py-0.5 text-[10px] bg-brand-teal/10 text-brand-teal border border-brand-teal/30 rounded-full">Nuevo</span>
+                </a>
+                <a href="#sitios-interes" class="hover:text-brand-teal transition-colors">Sitios de Interés</a>
+                <a href="#contacto" class="hover:text-brand-teal transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://wa.me/56935247846?text=Hola,%20quisiera%20consultar%20por%20sus%20servicios%20contables." target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl border border-slate-700 hover:border-brand-teal text-slate-200 hover:text-brand-teal text-sm font-semibold transition-all flex items-center gap-2 touch-target justify-center">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="#cotizador" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-teal to-brand-cyan text-navy-950 font-semibold text-sm hover:opacity-90 transition-all shadow-lg shadow-brand-teal/20 touch-target flex items-center justify-center">
+                    Evaluar Mi Empresa
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" aria-label="Abrir Menú" class="lg:hidden text-slate-300 hover:text-white p-3 touch-target flex items-center justify-center">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-navy-900 border-b border-slate-800 px-4 pt-4 pb-6 space-y-4">
+            <a href="#servicios" onclick="closeMobileMenu()" class="block text-slate-300 hover:text-brand-teal text-base py-2 border-b border-slate-800/60">Servicios</a>
+            <a href="#metodologia" onclick="closeMobileMenu()" class="block text-slate-300 hover:text-brand-teal text-base py-2 border-b border-slate-800/60">Cómo Trabajamos</a>
+            <a href="#cotizador" onclick="closeMobileMenu()" class="block text-slate-300 hover:text-brand-teal text-base py-2 border-b border-slate-800/60">Cotizador Online</a>
+            <a href="#sitios-interes" onclick="closeMobileMenu()" class="block text-slate-300 hover:text-brand-teal text-base py-2 border-b border-slate-800/60">Sitios de Interés</a>
+            <a href="#contacto" onclick="closeMobileMenu()" class="block text-slate-300 hover:text-brand-teal text-base py-2">Contacto</a>
+            <div class="pt-2 flex flex-col gap-3">
+                <a href="https://wa.me/56935247846" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl border border-slate-700 text-slate-200 text-sm font-semibold flex items-center justify-center gap-2 touch-target">
+                    <i class="fa-brands fa-whatsapp text-emerald-400"></i> WhatsApp
+                </a>
+                <a href="#cotizador" onclick="closeMobileMenu()" class="w-full text-center py-3 rounded-xl bg-brand-teal text-navy-950 font-semibold text-sm touch-target flex items-center justify-center">
+                    Evaluar Mi Empresa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-brand-teal/10 blur-[140px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-brand-cyan/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-brand-teal/30 text-slate-300 text-xs font-medium backdrop-blur-md shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
+                        <span>Gestión Contable 100% Remota & Digital</span>
+                        <i class="fa-solid fa-cloud text-brand-cyan ml-1"></i>
+                    </div>
+
+                    <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
+                        Tu contabilidad y finanzas al día, <span class="gradient-text">sin salir de tu oficina</span>.
+                    </h1>
+
+                    <p class="text-slate-400 text-base sm:text-xl font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Optimiza tu carga tributaria, mantén tu flujo de caja bajo control y toma decisiones estratégicas con informes financieros precisos en tiempo real.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-teal to-brand-cyan text-navy-950 font-bold text-base hover:shadow-lg hover:shadow-brand-teal/25 transition-all text-center touch-target flex items-center justify-center">
+                            Solicitar Diagnóstico Gratuito
+                        </a>
+                        <a href="#cotizador" class="w-full sm:w-auto px-8 py-4 rounded-xl card-blur border border-slate-700 hover:border-brand-teal/50 text-white font-semibold text-base hover:bg-slate-800/60 transition-all text-center flex items-center justify-center gap-2 touch-target">
+                            <i class="fa-solid fa-calculator text-brand-teal"></i>
+                            Calcular Presupuesto
+                        </a>
+                    </div>
+
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-heading text-xl sm:text-2xl font-bold text-white">100%</p>
+                            <p class="text-xs text-slate-400">Digital & En la Nube</p>
+                        </div>
+                        <div>
+                            <p class="font-heading text-xl sm:text-2xl font-bold text-white">Zero</p>
+                            <p class="text-xs text-slate-400">Papeleo Físico</p>
+                        </div>
+                        <div>
+                            <p class="font-heading text-xl sm:text-2xl font-bold text-white">24/7</p>
+                            <p class="text-xs text-slate-400">Acceso a Métricas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-teal/30 to-brand-cyan/20 blur-xl opacity-75"></div>
+                        
+                        <div class="relative card-blur p-5 sm:p-6 rounded-2xl border border-slate-700/60 shadow-2xl space-y-6">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-lg bg-brand-blue flex items-center justify-center text-brand-teal">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-heading font-semibold text-sm text-white">Resumen Financiero</h3>
+                                        <p class="text-xs text-slate-400">Actualizado este mes</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">
+                                    En Regla / Al Día
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                                    <p class="text-xs text-slate-400 mb-1">Impuestos F29 Estimado</p>
+                                    <p class="text-base sm:text-lg font-bold font-heading text-white">$ 1.240.000</p>
+                                    <span class="text-[10px] text-brand-teal"><i class="fa-solid fa-check-circle"></i> Optimizado</span>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                                    <p class="text-xs text-slate-400 mb-1">Margen Operativo</p>
+                                    <p class="text-base sm:text-lg font-bold font-heading text-brand-teal">32.4%</p>
+                                    <span class="text-[10px] text-emerald-400"><i class="fa-solid fa-arrow-up"></i> +4.2% vs mes ant.</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2 pt-1">
+                                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Especialistas en ERPs e Integraciones</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 font-medium flex items-center gap-1">
+                                        <i class="fa-solid fa-cubes text-brand-cyan"></i> Odoo
+                                    </span>
+                                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 font-medium flex items-center gap-1">
+                                        <i class="fa-solid fa-layer-group text-blue-400"></i> Dynamics 365
+                                    </span>
+                                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 font-medium flex items-center gap-1">
+                                        <i class="fa-solid fa-cloud text-indigo-400"></i> Defontana
+                                    </span>
+                                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 font-medium flex items-center gap-1">
+                                        <i class="fa-solid fa-database text-amber-400"></i> Adempiere
+                                    </span>
+                                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 font-medium flex items-center gap-1">
+                                        <i class="fa-solid fa-calculator text-emerald-400"></i> Nubox
+                                    </span>
+                                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 font-medium flex items-center gap-1">
+                                        <i class="fa-solid fa-users text-rose-400"></i> Buk
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-brand-teal/5 border border-brand-teal/20 flex items-center gap-3">
+                                <i class="fa-solid fa-shield-halved text-brand-teal text-xl"></i>
+                                <p class="text-xs text-slate-300 leading-snug">
+                                    Respaldo de información en la nube con altos estándares de confidencialidad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE SERVICES SECTION -->
+    <section id="servicios" class="py-20 bg-navy-900/60 border-y border-slate-800/80 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold text-brand-teal uppercase tracking-widest">Soluciones Integrales</h2>
+                <h3 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+                    Servicios Especializados para el Control Total de tu Negocio
+                </h3>
+                <p class="text-slate-400 text-base">
+                    Nos encargamos de toda la complejidad contable, tributaria y operativa para que tú te enfoques en hacer crecer tu empresa.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="card-blur p-6 rounded-2xl border border-slate-800 hover:border-brand-teal/40 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-brand-teal/10 border border-brand-teal/20 text-brand-teal flex items-center justify-center text-xl mb-6 group-hover:scale-110 group-hover:bg-brand-teal group-hover:text-navy-950 transition-all">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Contabilidad & Informes NIIF</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Registro continuo, estados financieros bajo normativa NIIF / IFRS, cierres mensuales oportunos y reportabilidad directa a la gerencia.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal"></i> Conciliación Bancaria</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal"></i> Balances NIIF / IFRS</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-blur p-6 rounded-2xl border border-slate-800 hover:border-brand-teal/40 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xl mb-6 group-hover:scale-110 group-hover:bg-brand-cyan group-hover:text-navy-950 transition-all">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Cumplimiento Tributario</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Gestión de impuestos mensuales (F29/IVA), Operación Renta anual, DDJJ y asesoría en Regímenes Pro Pyme y Semi-Integrado.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan"></i> Formulario F29 al día</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan"></i> Declaración de Renta</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-blur p-6 rounded-2xl border border-slate-800 hover:border-brand-teal/40 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 group-hover:bg-emerald-400 group-hover:text-navy-950 transition-all">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Flujo de Caja & Finanzas</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Planificación financiera, proyecciones de Cash Flow, presupuestos operativos y control de costes para cuidar la liquidez.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Control de Caja Mensual</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Proyección de Gastos</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card-blur p-6 rounded-2xl border border-slate-800 hover:border-brand-teal/40 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 group-hover:bg-indigo-400 group-hover:text-navy-950 transition-all">
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Compatibilidad ERP</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Operamos directamente en tu plataforma contable habitual: Odoo, Dynamics 365, Defontana, Adempiere, Nubox o Buk sin costo adicional.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Operación Multisistema</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Sin cobro de licencias</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHODOLOGY / HOW WE WORK SECTION -->
+    <section id="metodologia" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-bold text-brand-teal uppercase tracking-widest">Metodología 100% Remota</h2>
+                <h3 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+                    Trabajar a distancia nunca fue tan fácil y seguro
+                </h3>
+                <p class="text-slate-400 text-base">
+                    Un proceso fluido, transparente y organizado para que mantengas el control total sin moverte de tu escritorio.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6 relative">
+                <!-- Step 1 -->
+                <div class="card-blur p-6 rounded-2xl border border-slate-800 relative z-10">
+                    <div class="w-10 h-10 rounded-full bg-brand-teal/20 text-brand-teal font-heading font-bold text-lg flex items-center justify-center mb-4">
+                        01
+                    </div>
+                    <h4 class="font-heading font-bold text-white text-lg mb-2">Recepción Digital</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Carga masiva de facturas, cartolas bancarias y documentos a través de carpetas seguras compartidas en la nube.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="card-blur p-6 rounded-2xl border border-slate-800 relative z-10">
+                    <div class="w-10 h-10 rounded-full bg-brand-cyan/20 text-brand-cyan font-heading font-bold text-lg flex items-center justify-center mb-4">
+                        02
+                    </div>
+                    <h4 class="font-heading font-bold text-white text-lg mb-2">Procesamiento ERP</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Clasificación de egresos e ingresos, conciliación de cuentas y registro automático en software contable.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="card-blur p-6 rounded-2xl border border-slate-800 relative z-10">
+                    <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-heading font-bold text-lg flex items-center justify-center mb-4">
+                        03
+                    </div>
+                    <h4 class="font-heading font-bold text-white text-lg mb-2">Cierre & Validación</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Cálculo preciso de impuestos mensuales (F29), emisión de informes clave y auditoría interna de cumplimiento.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="card-blur p-6 rounded-2xl border border-slate-800 relative z-10">
+                    <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-heading font-bold text-lg flex items-center justify-center mb-4">
+                        04
+                    </div>
+                    <h4 class="font-heading font-bold text-white text-lg mb-2">Reunión Virtual</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sesión mensual por Google Meet / Zoom para revisar resultados, aclarar dudas y planificar acciones tributarias.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FEE ESTIMATOR / COTIZADOR INTERACTIVO -->
+    <section id="cotizador" class="py-20 bg-navy-900/80 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="px-3 py-1 rounded-full bg-brand-teal/10 text-brand-teal text-xs font-bold uppercase tracking-wider border border-brand-teal/20">
+                    Simulador Transparente
+                </span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+                    Estima el Costo de tu Servicio Contable
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Selecciona las características de tu negocio para obtener una estimación mensual instantánea.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto card-blur p-6 sm:p-10 rounded-3xl border border-slate-700/80 shadow-2xl">
+                <div class="grid md:grid-cols-12 gap-8">
+                    
+                    <!-- Controls Column -->
+                    <div class="md:col-span-7 space-y-6">
+                        
+                        <!-- 1. Tipo de Empresa -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-200 mb-3">1. Tipo / Tamaño de Empresa</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" onclick="selectRegime('pyme', this)" class="regime-btn active px-2 sm:px-3 py-3 rounded-xl border border-brand-teal bg-brand-teal/10 text-white font-medium text-xs text-center transition-all touch-target">
+                                    <i class="fa-solid fa-store block text-base mb-1 text-brand-teal"></i>
+                                    Pyme / Startup
+                                </button>
+                                <button type="button" onclick="selectRegime('mediana', this)" class="regime-btn px-2 sm:px-3 py-3 rounded-xl border border-slate-700 bg-slate-900/50 hover:border-slate-600 text-slate-300 font-medium text-xs text-center transition-all touch-target">
+                                    <i class="fa-solid fa-building block text-base mb-1 text-brand-cyan"></i>
+                                    Empresa Mediana
+                                </button>
+                                <button type="button" onclick="selectRegime('corporativo', this)" class="regime-btn px-2 sm:px-3 py-3 rounded-xl border border-slate-700 bg-slate-900/50 hover:border-slate-600 text-slate-300 font-medium text-xs text-center transition-all touch-target">
+                                    <i class="fa-solid fa-city block text-base mb-1 text-emerald-400"></i>
+                                    Grupo / Hold.
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 2. Volumetría de Documentos -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-sm font-semibold text-slate-200">2. Documentos emitidos/recibidos al mes</label>
+                                <span id="txCount" class="font-heading font-bold text-brand-teal text-base">30 doc/mes</span>
+                            </div>
+                            <input type="range" id="txSlider" min="10" max="300" step="10" value="30" oninput="updateCalculation()" class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer custom-slider accent-brand-teal">
+                            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                                <span>10 doc</span>
+                                <span>150 doc</span>
+                                <span>300+ doc</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. Módulos Adicionales con precios dinámicos por segmento -->
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="block text-sm font-semibold text-slate-200">3. Servicios Complementarios</label>
+                                <span class="text-[11px] text-brand-teal font-medium" id="addonSegmentBadge">Precios segmento PYME</span>
+                            </div>
+                            <div class="space-y-3">
+                                <!-- Remuneraciones con selector de trabajadores por tramos -->
+                                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
+                                    <label class="flex items-center gap-3 cursor-pointer touch-target">
+                                        <input type="checkbox" id="addonRemuneraciones" onchange="updateCalculation()" class="w-5 h-5 rounded text-brand-teal bg-slate-800 border-slate-700 focus:ring-0">
+                                        <span class="text-xs sm:text-sm text-slate-300 font-medium flex-1">Gestión de Remuneraciones y Payroll</span>
+                                        <span id="remuPriceTag" class="text-xs font-semibold text-slate-400">+$25.000</span>
+                                    </label>
+                                    
+                                    <div id="remuWorkersBox" class="hidden pl-7 pt-1 border-t border-slate-800/80">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="text-[11px] text-slate-400">N° de Trabajadores a liquidar:</span>
+                                            <span id="workersCountText" class="text-xs font-bold text-brand-teal">5 trabajadores</span>
+                                        </div>
+                                        <input type="range" id="workersSlider" min="1" max="100" step="1" value="5" oninput="updateCalculation()" class="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer custom-slider accent-brand-teal">
+                                        <p class="text-[10px] text-slate-400 mt-1" id="remuTierNotice">Tarifa ajustada a categoría Pyme ($5.000/trabajador)</p>
+                                    </div>
+                                </div>
+
+                                <!-- Informes NIIF / IFRS (Dinámico) -->
+                                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:border-slate-700 transition-colors touch-target">
+                                    <input type="checkbox" id="addonNIIF" onchange="updateCalculation()" class="w-5 h-5 rounded text-brand-teal bg-slate-800 border-slate-700 focus:ring-0">
+                                    <span class="text-xs sm:text-sm text-slate-300 font-medium flex-1">Estados Financieros bajo NIIF / IFRS</span>
+                                    <span id="niifPriceTag" class="text-xs font-semibold text-brand-teal">+$45.000</span>
+                                </label>
+
+                                <!-- Planificación y Asesoría Tributaria (Dinámico) -->
+                                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:border-slate-700 transition-colors touch-target">
+                                    <input type="checkbox" id="addonTributaria" onchange="updateCalculation()" class="w-5 h-5 rounded text-brand-teal bg-slate-800 border-slate-700 focus:ring-0">
+                                    <span class="text-xs sm:text-sm text-slate-300 font-medium flex-1">Planificación & Asesoría Tributaria Avanzada</span>
+                                    <span id="tributariaPriceTag" class="text-xs font-semibold text-brand-teal">+$40.000</span>
+                                </label>
+
+                                <!-- Auditoría Financiera / Control Interno (Dinámico) -->
+                                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:border-slate-700 transition-colors touch-target">
+                                    <input type="checkbox" id="addonAuditoria" onchange="updateCalculation()" class="w-5 h-5 rounded text-brand-teal bg-slate-800 border-slate-700 focus:ring-0">
+                                    <span class="text-xs sm:text-sm text-slate-300 font-medium flex-1">Auditoría Financiera Mensual / Control Interno</span>
+                                    <span id="auditoriaPriceTag" class="text-xs font-semibold text-brand-teal">+$50.000</span>
+                                </label>
+
+                                <!-- Reestructuración de Sociedades (Dinámico) -->
+                                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:border-slate-700 transition-colors touch-target">
+                                    <input type="checkbox" id="addonReestructuracion" onchange="updateCalculation()" class="w-5 h-5 rounded text-brand-teal bg-slate-800 border-slate-700 focus:ring-0">
+                                    <span class="text-xs sm:text-sm text-slate-300 font-medium flex-1">Reestructuración & Legal Contable Corporativo</span>
+                                    <span id="reestructuracionPriceTag" class="text-xs font-semibold text-brand-teal">+$60.000</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Result Column -->
+                    <div class="md:col-span-5 flex flex-col justify-between p-6 rounded-2xl bg-gradient-to-b from-slate-900 to-navy-950 border border-slate-800 text-center relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-teal/10 blur-2xl rounded-full"></div>
+                        
+                        <div>
+                            <span class="text-xs uppercase font-bold tracking-widest text-slate-400">Estimación Mensual</span>
+                            <div class="my-4">
+                                <span class="text-xs text-slate-400 align-top">CLP $</span>
+                                <span id="totalPrice" class="font-heading text-4xl sm:text-5xl font-extrabold text-white tracking-tight">85.000</span>
+                                <span class="text-xs text-slate-400 block mt-1">+ IVA / Facturable</span>
+                            </div>
+                            
+                            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                                Incluye declaración mensual F29, registros de compra/venta, conciliación bancaria y atención remota personalizada.
+                            </p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <button onclick="applyQuoteToForm()" class="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-brand-teal to-brand-cyan text-navy-950 font-bold text-sm hover:shadow-lg hover:shadow-brand-teal/20 transition-all flex items-center justify-center gap-2 touch-target">
+                                <span>Solicitar Esta Cotización</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <p class="text-[11px] text-slate-400">
+                                <i class="fa-solid fa-shield-halved text-brand-teal"></i> Sin compromisos ni contratos forzados.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SITIOS DE INTERÉS / PORTALES INSTITUCIONALES -->
+    <section id="sitios-interes" class="py-16 bg-navy-900/40 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="px-3 py-1 rounded-full bg-brand-cyan/10 text-brand-cyan text-xs font-bold uppercase tracking-wider border border-brand-cyan/20">
+                    Accesos Directos
+                </span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+                    Sitios de Interés & Portales Clave
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Enlaces de interés oficial para emprendedores, pymes y empresas en Chile.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <!-- Registro de Empresas y Sociedades (Empresa en un Día) -->
+                <a href="https://www.registrodeempresasysociedades.cl" target="_blank" rel="noopener noreferrer" class="card-blur p-5 rounded-2xl border border-slate-800 hover:border-brand-teal/50 transition-all duration-300 flex items-start gap-4 group touch-target">
+                    <div class="w-12 h-12 rounded-xl bg-brand-teal/10 border border-brand-teal/20 text-brand-teal flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:bg-brand-teal group-hover:text-navy-950 transition-all">
+                        <i class="fa-solid fa-building-flag"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-brand-teal transition-colors">Empresa en un Día</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-brand-teal"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                            Registro de Empresas y Sociedades para la constitución, modificación y gestión legal de tu empresa.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Servicio de Impuestos Internos (SII) -->
+                <a href="https://www.sii.cl" target="_blank" rel="noopener noreferrer" class="card-blur p-5 rounded-2xl border border-slate-800 hover:border-brand-cyan/50 transition-all duration-300 flex items-start gap-4 group touch-target">
+                    <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:bg-brand-cyan group-hover:text-navy-950 transition-all">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-brand-cyan transition-colors">Servicio de Impuestos Internos</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-brand-cyan"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                            Portal oficial para emisión de DTEs, declaración de impuestos (F29/F22) y carpeta tributaria.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Previred -->
+                <a href="https://www.previred.com" target="_blank" rel="noopener noreferrer" class="card-blur p-5 rounded-2xl border border-slate-800 hover:border-emerald-400/50 transition-all duration-300 flex items-start gap-4 group touch-target">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:bg-emerald-400 group-hover:text-navy-950 transition-all">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-emerald-400 transition-colors">Previred</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-emerald-400"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                            Plataforma para la declaración y pago de cotizaciones previsionales de trabajadores.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Tesorería General de la República (TGR) -->
+                <a href="https://www.tgr.cl" target="_blank" rel="noopener noreferrer" class="card-blur p-5 rounded-2xl border border-slate-800 hover:border-amber-400/50 transition-all duration-300 flex items-start gap-4 group touch-target">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-navy-950 transition-all">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-amber-400 transition-colors">Tesorería General (TGR)</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-amber-400"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                            Gestión de pagos fiscalizados, convenios de pago y certificados de deuda fiscal.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Dirección del Trabajo (DT) -->
+                <a href="https://www.dt.gob.cl" target="_blank" rel="noopener noreferrer" class="card-blur p-5 rounded-2xl border border-slate-800 hover:border-indigo-400/50 transition-all duration-300 flex items-start gap-4 group touch-target">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:bg-indigo-400 group-hover:text-navy-950 transition-all">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-indigo-400 transition-colors">Dirección del Trabajo</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-indigo-400"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                            Portal MiDT para registro de contratos de trabajo, finiquitos y normativa laboral.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Diario Oficial de Chile -->
+                <a href="https://www.diariooficial.interior.gob.cl" target="_blank" rel="noopener noreferrer" class="card-blur p-5 rounded-2xl border border-slate-800 hover:border-rose-400/50 transition-all duration-300 flex items-start gap-4 group touch-target">
+                    <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:bg-rose-400 group-hover:text-navy-950 transition-all">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-rose-400 transition-colors">Diario Oficial</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-rose-400"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                            Publicación y verificación de extractos de sociedades y constituciones legales.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & CONSULTATION FORM -->
+    <section id="contacto" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">Contacto Directo</span>
+                        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white mt-2">
+                            Comencemos a trabajar juntos hoy
+                        </h2>
+                        <p class="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed">
+                            Envía tus datos y coordinemos una primera sesión de evaluación sin costo para entender las necesidades de tu empresa.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-xl card-blur border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-brand-teal/10 text-brand-teal flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold text-slate-400">Correo Electrónico</h4>
+                                <p class="text-sm font-medium text-white">equipo.digital@outlook.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl card-blur border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 text-brand-cyan flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold text-slate-400">WhatsApp / Teléfono</h4>
+                                <p class="text-sm font-medium text-white">+56 9 3524 7846</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl card-blur border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold text-slate-400">Horario de Atención Remota</h4>
+                                <p class="text-sm font-medium text-white">Lunes a Viernes: 09:00 - 18:30 hrs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7">
+                    <div class="card-blur p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl relative">
+                        
+                        <!-- Notification Box -->
+                        <div id="formSuccess" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-xl shrink-0"></i>
+                            <span>¡Mensaje enviado con éxito! Nos pondremos en contacto contigo a la brevedad.</span>
+                        </div>
+
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-2">Nombre Completo *</label>
+                                    <input type="text" required placeholder="Ej: Maria González" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-2">Nombre de Empresa / RUT</label>
+                                    <input type="text" placeholder="Ej: Mi Empresa SpA" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-2">Correo Electrónico *</label>
+                                    <input type="email" required placeholder="tuemail@dominio.cl" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-2">Teléfono / WhatsApp *</label>
+                                    <input type="tel" required placeholder="+56 9 3524 7846" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-2">Servicio Requerido</label>
+                                <select class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all touch-target">
+                                    <option value="contabilidad">Contabilidad Mensual & Informes NIIF</option>
+                                    <option value="remuneraciones">Gestión de Remuneraciones & Payroll</option>
+                                    <option value="tributaria">Planificación & Asesoría Tributaria</option>
+                                    <option value="auditoria">Auditoría Financiera & Control Interno</option>
+                                    <option value="reestructuracion">Reestructuración de Sociedades</option>
+                                    <option value="renta">Operación Renta Anual</option>
+                                    <option value="otro">Evaluación General de Empresa</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-2">Mensaje o Detalle</label>
+                                <textarea id="formMessage" rows="4" placeholder="Cuéntanos sobre tu negocio, número de trabajadores o volumen aproximado de documentos..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-brand-teal to-brand-cyan text-navy-950 font-bold text-base hover:opacity-95 transition-all shadow-lg shadow-brand-teal/20 flex items-center justify-center gap-2 touch-target">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Enviar Solicitud</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 border-t border-slate-800 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-brand-teal to-brand-cyan flex items-center justify-center text-navy-950 font-heading font-extrabold text-sm">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <span class="font-heading font-bold text-sm text-white">FinanzaDigital</span>
+            </div>
+            
+            <p>© 2026 FinanzaDigital - Servicios Contables Remotos (equipo.digital@outlook.com)</p>
+            
+            <div class="flex gap-4 text-base">
+                <a href="#" class="hover:text-brand-teal transition-colors touch-target flex items-center justify-center"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-brand-teal transition-colors touch-target flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/56935247846" target="_blank" rel="noopener noreferrer" class="hover:text-brand-teal transition-colors touch-target flex items-center justify-center"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR CALCULATOR AND INTERACTIVITY -->
+    <script>
+        // State variables for quote calculator
+        let selectedRegime = 'pyme';
+        
+        // Base monthly fees by company scale
+        const regimeBasePrices = {
+            'pyme': 65000,
+            'mediana': 140000,
+            'corporativo': 280000
+        };
+
+        // Price per worker according to company scale
+        const workerRates = {
+            'pyme': 5000,
+            'mediana': 4000,
+            'corporativo': 3500
+        };
+
+        // Segment-based pricing matrix for complementary services
+        const addonPrices = {
+            'niif': { 'pyme': 45000, 'mediana': 90000, 'corporativo': 180000 },
+            'tributaria': { 'pyme': 40000, 'mediana': 80000, 'corporativo': 150000 },
+            'auditoria': { 'pyme': 50000, 'mediana': 100000, 'corporativo': 210000 },
+            'reestructuracion': { 'pyme': 60000, 'mediana': 120000, 'corporativo': 250000 }
+        };
+
+        function selectRegime(regime, btnElement) {
+            selectedRegime = regime;
+            document.querySelectorAll('.regime-btn').forEach(btn => {
+                btn.classList.remove('border-brand-teal', 'bg-brand-teal/10', 'text-white');
+                btn.classList.add('border-slate-700', 'bg-slate-900/50', 'text-slate-300');
+            });
+
+            btnElement.classList.remove('border-slate-700', 'bg-slate-900/50', 'text-slate-300');
+            btnElement.classList.add('border-brand-teal', 'bg-brand-teal/10', 'text-white');
+
+            updateCalculation();
+        }
+
+        function updateCalculation() {
+            const txCount = parseInt(document.getElementById('txSlider').value);
+            document.getElementById('txCount').textContent = `${txCount} doc/mes`;
+
+            // Update badge title for active segment
+            const segmentText = selectedRegime === 'pyme' ? 'PYME' : selectedRegime === 'mediana' ? 'Empresa Mediana' : 'Grupo / Holding';
+            document.getElementById('addonSegmentBadge').textContent = `Precios segmento ${segmentText}`;
+
+            // Update dynamic pricing tags in UI
+            document.getElementById('niifPriceTag').textContent = `+$${addonPrices.niif[selectedRegime].toLocaleString('es-CL')}`;
+            document.getElementById('tributariaPriceTag').textContent = `+$${addonPrices.tributaria[selectedRegime].toLocaleString('es-CL')}`;
+            document.getElementById('auditoriaPriceTag').textContent = `+$${addonPrices.auditoria[selectedRegime].toLocaleString('es-CL')}`;
+            document.getElementById('reestructuracionPriceTag').textContent = `+$${addonPrices.reestructuracion[selectedRegime].toLocaleString('es-CL')}`;
+
+            // Base price calculation
+            let total = regimeBasePrices[selectedRegime];
+
+            // Transaction Volume Addition
+            const extraTx = Math.max(0, txCount - 20);
+            total += extraTx * 350;
+
+            // Remuneraciones / Payroll logic
+            const remuChecked = document.getElementById('addonRemuneraciones').checked;
+            const remuBox = document.getElementById('remuWorkersBox');
+            
+            if (remuChecked) {
+                remuBox.classList.remove('hidden');
+                const workersCount = parseInt(document.getElementById('workersSlider').value);
+                const ratePerWorker = workerRates[selectedRegime];
+                const remuTotal = workersCount * ratePerWorker;
+                
+                document.getElementById('workersCountText').textContent = `${workersCount} trabajador${workersCount > 1 ? 'es' : ''}`;
+                document.getElementById('remuPriceTag').textContent = `+$${remuTotal.toLocaleString('es-CL')}`;
+                document.getElementById('remuTierNotice').textContent = `Tarifa ${selectedRegime.toUpperCase()}: $${ratePerWorker.toLocaleString('es-CL')} CLP / trabajador`;
+
+                total += remuTotal;
+            } else {
+                remuBox.classList.add('hidden');
+                document.getElementById('remuPriceTag').textContent = '+$25.000';
+            }
+
+            // Calculate active dynamic addons
+            if (document.getElementById('addonNIIF').checked) total += addonPrices.niif[selectedRegime];
+            if (document.getElementById('addonTributaria').checked) total += addonPrices.tributaria[selectedRegime];
+            if (document.getElementById('addonAuditoria').checked) total += addonPrices.auditoria[selectedRegime];
+            if (document.getElementById('addonReestructuracion').checked) total += addonPrices.reestructuracion[selectedRegime];
+
+            // Format price string
+            document.getElementById('totalPrice').textContent = total.toLocaleString('es-CL');
+        }
+
+        function applyQuoteToForm() {
+            const txCount = document.getElementById('txSlider').value;
+            const price = document.getElementById('totalPrice').textContent;
+            const remuChecked = document.getElementById('addonRemuneraciones').checked;
+            let remuDetail = "No";
+
+            if (remuChecked) {
+                const workers = document.getElementById('workersSlider').value;
+                remuDetail = `Sí (${workers} trabajadores)`;
+            }
+
+            let addonsList = [];
+            if (document.getElementById('addonNIIF').checked) addonsList.push("Estados Financieros NIIF");
+            if (document.getElementById('addonTributaria').checked) addonsList.push("Planificación Tributaria");
+            if (document.getElementById('addonAuditoria').checked) addonsList.push("Auditoría Financiera");
+            if (document.getElementById('addonReestructuracion').checked) addonsList.push("Reestructuración de Sociedades");
+            
+            const addonsText = addonsList.length > 0 ? addonsList.join(", ") : "Ninguno";
+            
+            const messageField = document.getElementById('formMessage');
+            messageField.value = `Hola, he realizado una cotización en la web:\n- Segmento: ${selectedRegime.toUpperCase()}\n- Documentos/mes: ~${txCount}\n- Remuneraciones: ${remuDetail}\n- Servicios Adicionales: ${addonsText}\n- Estimación obtenida: $${price} CLP/mes.\nMe gustaría solicitar una propuesta formal basada en esta estimación.`;
+
+            // Scroll smoothly to form
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const successBox = document.getElementById('formSuccess');
+            successBox.classList.remove('hidden');
+            
+            // Clear form
+            document.getElementById('contactForm').reset();
+            
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Mobile Menu Toggling
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function closeMobileMenu() {
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
